@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="JDBC优化,">
 
 
 
@@ -78,13 +78,14 @@
 
 
 <meta name="description" content="概念：用于存放数据库连接的容器（集合）。 意义：普通jdbc执行close就会释放该资源，下次再调用时就得重新创建对象，这样频繁创建对象，造成浪费资源的同时 也降低执行效率。 节约资源，用户访问高效 实现步骤：标准接口：DataSource（java.sql）     方法：         创建数据库连接池对象：ComboPooledDataSource()         获取连接对象：get">
+<meta name="keywords" content="JDBC优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库连接池">
 <meta property="og:url" content="http://yoursite.com/2019/05/28/数据库连接池/index.html">
 <meta property="og:site_name" content="GuAosky&#39;s Blog(￣▽￣)／">
 <meta property="og:description" content="概念：用于存放数据库连接的容器（集合）。 意义：普通jdbc执行close就会释放该资源，下次再调用时就得重新创建对象，这样频繁创建对象，造成浪费资源的同时 也降低执行效率。 节约资源，用户访问高效 实现步骤：标准接口：DataSource（java.sql）     方法：         创建数据库连接池对象：ComboPooledDataSource()         获取连接对象：get">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-28T12:03:34.729Z">
+<meta property="og:updated_time" content="2019-05-28T12:22:50.381Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库连接池">
 <meta name="twitter:description" content="概念：用于存放数据库连接的容器（集合）。 意义：普通jdbc执行close就会释放该资源，下次再调用时就得重新创建对象，这样频繁创建对象，造成浪费资源的同时 也降低执行效率。 节约资源，用户访问高效 实现步骤：标准接口：DataSource（java.sql）     方法：         创建数据库连接池对象：ComboPooledDataSource()         获取连接对象：get">
@@ -270,6 +271,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -308,37 +331,33 @@
         归还连接：Connection.close()
         注意：如果Connection对象是由连接池中获取的，那么执行close()方法则不会释放该资源，而是将该资源返回连接池中。
         交于数据库厂商实现
-
-### 两种连接池技术（c3p0，Druid）
-    #### c3p0：
-        导入三个jar包：
-            c3p0-0.9.5.2.jar，和mchange-commons-java-0.2.12.jar以及数据库驱动包mysql-connector-java-8.0.11.jar
-        导入配置文件：
-            配置文件名：
-                c3p0.properties或者c3p0-config.xml
-            放置路径：
-                将配置文件放入src目录下即可
-    #### Druid:
-        步骤：
-            导入jar包：
-                druid-1.0.9.jar
-            导入配置文件：
-                druid.properties
-                任意命令，放置任意目录下
-            加载配置文件：
-                Properties()
-            获取对象：
-                数据库连接池对象：
-                    通过工厂来获取（DruidDataSourceFactory）
-                获取连接：
-                    getConnection
-        定义工具类：
-            定义JDBCUtils类
-            提供静态代码块加载配置文件，初始化连接池对象
-            提供方法：
-                获取连接池方法
-                获取连接方法（通过数据库连接池获取连接）
-                释放资源
+</code></pre><h3 id="两种连接池技术（c3p0，Druid）"><a href="#两种连接池技术（c3p0，Druid）" class="headerlink" title="两种连接池技术（c3p0，Druid）"></a>两种连接池技术（c3p0，Druid）</h3><h4 id="c3p0："><a href="#c3p0：" class="headerlink" title="c3p0："></a>c3p0：</h4><pre><code>导入三个jar包：
+    c3p0-0.9.5.2.jar，和mchange-commons-java-0.2.12.jar以及数据库驱动包mysql-connector-java-8.0.11.jar
+导入配置文件：
+    配置文件名：
+        c3p0.properties或者c3p0-config.xml
+    放置路径：
+        将配置文件放入src目录下即可
+</code></pre><h4 id="Druid"><a href="#Druid" class="headerlink" title="Druid:"></a>Druid:</h4><pre><code>步骤：
+    导入jar包：
+        druid-1.0.9.jar
+    导入配置文件：
+        druid.properties
+        任意命令，放置任意目录下
+    加载配置文件：
+        Properties()
+    获取对象：
+        数据库连接池对象：
+            通过工厂来获取（DruidDataSourceFactory）
+        获取连接：
+            getConnection
+定义工具类：
+    定义JDBCUtils类
+    提供静态代码块加载配置文件，初始化连接池对象
+    提供方法：
+        获取连接池方法
+        获取连接方法（通过数据库连接池获取连接）
+        释放资源
 </code></pre>
       
     </div>
@@ -363,6 +382,12 @@
 	</div>
 	
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JDBC优化/" rel="tag"># JDBC优化</a>
+          
+        </div>
       
 
       
@@ -482,7 +507,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -515,7 +540,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念："><span class="nav-number">1.</span> <span class="nav-text">概念：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#意义："><span class="nav-number">2.</span> <span class="nav-text">意义：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现步骤："><span class="nav-number">3.</span> <span class="nav-text">实现步骤：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念："><span class="nav-number">1.</span> <span class="nav-text">概念：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#意义："><span class="nav-number">2.</span> <span class="nav-text">意义：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现步骤："><span class="nav-number">3.</span> <span class="nav-text">实现步骤：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两种连接池技术（c3p0，Druid）"><span class="nav-number">3.1.</span> <span class="nav-text">两种连接池技术（c3p0，Druid）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#c3p0："><span class="nav-number">3.1.1.</span> <span class="nav-text">c3p0：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Druid"><span class="nav-number">3.1.2.</span> <span class="nav-text">Druid:</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
