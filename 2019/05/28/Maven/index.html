@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="jar包管理,">
 
 
 
@@ -77,17 +77,18 @@
 
 
 
-<meta name="description" content="本地部署1.注册github账户（为博客托管准备）2.Git Bash 进行账户认证3.下载node.js（为Hexo提供支持）4.命令行安装cnpm（npm install -g -cnpm –registry=https://registry.npm.taobao.org）5.cnpm安装Hexo（cnpm install -g hexo-cli）  github部署1.新建仓库（注意前部分为">
+<meta name="description" content="用于管理几十乃至上百个jar包 Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 将代码即时编译类似Eclipse和IDEA等功能 单元测试一次性执行 打包项目 相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可  Maven项目相关设置 本地仓库位置：${use">
+<meta name="keywords" content="jar包管理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建博客总结">
-<meta property="og:url" content="http://yoursite.com/2019/04/27/搭建博客总结/index.html">
+<meta property="og:title" content="Maven">
+<meta property="og:url" content="http://yoursite.com/2019/05/28/Maven/index.html">
 <meta property="og:site_name" content="GuAosky&#39;s Blog(￣▽￣)／">
-<meta property="og:description" content="本地部署1.注册github账户（为博客托管准备）2.Git Bash 进行账户认证3.下载node.js（为Hexo提供支持）4.命令行安装cnpm（npm install -g -cnpm –registry=https://registry.npm.taobao.org）5.cnpm安装Hexo（cnpm install -g hexo-cli）  github部署1.新建仓库（注意前部分为">
+<meta property="og:description" content="用于管理几十乃至上百个jar包 Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 将代码即时编译类似Eclipse和IDEA等功能 单元测试一次性执行 打包项目 相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可  Maven项目相关设置 本地仓库位置：${use">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-26T17:42:56.724Z">
+<meta property="og:updated_time" content="2019-05-28T13:45:54.168Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搭建博客总结">
-<meta name="twitter:description" content="本地部署1.注册github账户（为博客托管准备）2.Git Bash 进行账户认证3.下载node.js（为Hexo提供支持）4.命令行安装cnpm（npm install -g -cnpm –registry=https://registry.npm.taobao.org）5.cnpm安装Hexo（cnpm install -g hexo-cli）  github部署1.新建仓库（注意前部分为">
+<meta name="twitter:title" content="Maven">
+<meta name="twitter:description" content="用于管理几十乃至上百个jar包 Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 将代码即时编译类似Eclipse和IDEA等功能 单元测试一次性执行 打包项目 相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可  Maven项目相关设置 本地仓库位置：${use">
 
 
 
@@ -117,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/27/搭建博客总结/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/28/Maven/">
 
 
 
 
 
-  <title>搭建博客总结 | GuAosky's Blog(￣▽￣)／</title>
+  <title>Maven | GuAosky's Blog(￣▽￣)／</title>
   
 
 
@@ -230,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/27/搭建博客总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/Maven/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SuperRobot">
@@ -247,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">搭建博客总结</h1>
+          <h1 class="post-title" itemprop="name headline">Maven</h1>
         
 
         <div class="post-meta">
@@ -259,8 +260,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-27T00:56:06+08:00">
-                2019-04-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T21:34:57+08:00">
+                2019-05-28
               </time>
             
 
@@ -269,6 +270,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -297,13 +320,25 @@
       
 
       
-        <h2 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h2><p>1.注册github账户（为博客托管准备）<br>2.Git Bash 进行账户认证<br>3.下载node.js（为Hexo提供支持）<br>4.命令行安装cnpm（npm install -g -cnpm –registry=<a href="https://registry.npm.taobao.org）" target="_blank" rel="noopener">https://registry.npm.taobao.org）</a><br>5.cnpm安装Hexo（cnpm install -g hexo-cli）</p>
-<hr>
-<h2 id="github部署"><a href="#github部署" class="headerlink" title="github部署"></a>github部署</h2><p>1.新建仓库（注意前部分为github用户名：githubname.github.io）<br>2.安装部署插件（cnmp install –save hexo-deployer-git）<br>3.设置博客文件下的_config.yml文件<br>4.部署到github（hexo d）</p>
-<hr>
-<h2 id="第一个博客"><a href="#第一个博客" class="headerlink" title="第一个博客"></a>第一个博客</h2><p>1.新建一个博客文件（mkdir blogname）<br>2.初始化一个博客（hexo init）<br>3.启动该博客文件（hexo s）<br>4.新建一篇文章（hexo n “博客名”）<br>4.清理（hexo clean）<br>5.生成（hexo generate）<br>6.重新启动（hexo s）</p>
-<hr>
-<h2 id="详细问题"><a href="#详细问题" class="headerlink" title="详细问题"></a>详细问题</h2><p><a href="https://blog.csdn.net/qq_34229391/article/details/82251852" target="_blank" rel="noopener">Git配置等详细问题</a></p>
+        <ol>
+<li>用于管理几十乃至上百个jar包<br> Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。<br> jar包的坐标保存于pom.xml文件中。</li>
+<li>将代码即时编译类似Eclipse和IDEA等功能</li>
+<li>单元测试一次性执行</li>
+<li><p>打包项目<br> 相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可</p>
+</li>
+<li><p>Maven项目相关设置<br> 本地仓库位置：${user.home}/.m2/repository<br> 可在注释下添加自己创建的位置：<localrepository>D:\java_maven\maven_repository</localrepository><br> 注意：文件路径不要有中文名</p>
+</li>
+<li><p>Maven命令<br> mvn clean：删除本地编译的所有信息：target文件（个人编译环境可能不同）<br> mvn compile：对src/main下的java文件进行编译<br> mvn test：不仅编译src/test下的java文件同时也编译src/main下的java文件<br> mvn package：打包项目生成war包并同时编译src/main和src/test下的java文件<br> 注意：打包的属性可在pom.xml下更改<br> mvn install：compile+test+package+将包保存到本地仓库里</p>
+</li>
+<li>本地jar包下载至本地仓库<br> 在windows的cmd命令下，参考下面安装命令安装jar包。<br> 注意：这个命令不能换行，中间用空格来分割的<pre><code>安装指定文件到本地仓库命令：mvn install:install-file
+-DgroupId=&lt;groupId&gt;       : 设置项目代码的包名(一般用组织名)
+-DartifactId=&lt;artifactId&gt; : 设置项目名或模块名 
+-Dversion=1.0.0           : 版本号
+-Dpackaging=jar           : 什么类型的文件(jar包)
+-Dfile=&lt;myfile.jar&gt;       : 指定jar文件路径与文件名(同目录只需文件名)
+</code></pre> 安装mysql-connector-java.jar命令实例：<pre><code>mvn install:install-file -DgroupId=mysql -DartifactId=mysql-connector-java -Dversion=8.0.11 -Dpackaging=jar -Dfile=mysql-connector-java-8.0.11.jar
+</code></pre> 执行完命令后，可看到SUCCESS字样的提示，代表安装成功了，可以在本地仓库找到了。</li>
+</ol>
 
       
     </div>
@@ -329,6 +364,12 @@
 	
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/jar包管理/" rel="tag"># jar包管理</a>
+          
+        </div>
+      
 
       
       
@@ -338,15 +379,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/05/28/Druid配置步骤与实现/" rel="next" title="Druid配置步骤与实现">
+                <i class="fa fa-chevron-left"></i> Druid配置步骤与实现
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/24/Junit单元测试/" rel="prev" title="Junit单元测试">
-                Junit单元测试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -398,17 +439,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -470,22 +502,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地部署"><span class="nav-number">1.</span> <span class="nav-text">本地部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github部署"><span class="nav-number">2.</span> <span class="nav-text">github部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个博客"><span class="nav-number">3.</span> <span class="nav-text">第一个博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细问题"><span class="nav-number">4.</span> <span class="nav-text">详细问题</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
