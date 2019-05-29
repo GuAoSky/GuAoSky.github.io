@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="代码库,">
 
 
 
@@ -77,17 +77,18 @@
 
 
 
-<meta name="description" content="1.定义测试类测试类名写法：被测试的类名Test 包名写法：xxx.xxx.xxx.test 2.定义可独立运行的测试方法方法名：test被测试的方法名   testSum 返回值：推荐为void 参数列表： 推荐为空参 3.方法加@Test@Test：不需要主方法（psvm）也能使类独立运行。 注意：需要添加Junit依赖 4.判断断言处理结果：Assert.Equals(期望值,测试结果的输出">
+<meta name="description" content="socket_client_ssh：12345678910111213141516171819202122import socketclient = socket.socket()client.connect((&apos;localhost&apos;,6969))while True:    cmd=input(&quot;&amp;gt;&amp;gt;:&quot;).strip()    if len(cmd) == 0:continue">
+<meta name="keywords" content="代码库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Junit单元测试">
-<meta property="og:url" content="http://yoursite.com/2019/05/24/Junit单元测试/index.html">
+<meta property="og:title" content="socket_ssh">
+<meta property="og:url" content="http://yoursite.com/2019/05/29/socket-ssh/index.html">
 <meta property="og:site_name" content="GuAosky&#39;s Blog(￣▽￣)／">
-<meta property="og:description" content="1.定义测试类测试类名写法：被测试的类名Test 包名写法：xxx.xxx.xxx.test 2.定义可独立运行的测试方法方法名：test被测试的方法名   testSum 返回值：推荐为void 参数列表： 推荐为空参 3.方法加@Test@Test：不需要主方法（psvm）也能使类独立运行。 注意：需要添加Junit依赖 4.判断断言处理结果：Assert.Equals(期望值,测试结果的输出">
+<meta property="og:description" content="socket_client_ssh：12345678910111213141516171819202122import socketclient = socket.socket()client.connect((&apos;localhost&apos;,6969))while True:    cmd=input(&quot;&amp;gt;&amp;gt;:&quot;).strip()    if len(cmd) == 0:continue">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-24T08:54:03.245Z">
+<meta property="og:updated_time" content="2019-05-29T00:46:43.392Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Junit单元测试">
-<meta name="twitter:description" content="1.定义测试类测试类名写法：被测试的类名Test 包名写法：xxx.xxx.xxx.test 2.定义可独立运行的测试方法方法名：test被测试的方法名   testSum 返回值：推荐为void 参数列表： 推荐为空参 3.方法加@Test@Test：不需要主方法（psvm）也能使类独立运行。 注意：需要添加Junit依赖 4.判断断言处理结果：Assert.Equals(期望值,测试结果的输出">
+<meta name="twitter:title" content="socket_ssh">
+<meta name="twitter:description" content="socket_client_ssh：12345678910111213141516171819202122import socketclient = socket.socket()client.connect((&apos;localhost&apos;,6969))while True:    cmd=input(&quot;&amp;gt;&amp;gt;:&quot;).strip()    if len(cmd) == 0:continue">
 
 
 
@@ -117,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/24/Junit单元测试/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/29/socket-ssh/">
 
 
 
 
 
-  <title>Junit单元测试 | GuAosky's Blog(￣▽￣)／</title>
+  <title>socket_ssh | GuAosky's Blog(￣▽￣)／</title>
   
 
 
@@ -230,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/Junit单元测试/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/29/socket-ssh/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SuperRobot">
@@ -247,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Junit单元测试</h1>
+          <h1 class="post-title" itemprop="name headline">socket_ssh</h1>
         
 
         <div class="post-meta">
@@ -259,8 +260,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-24T15:51:02+08:00">
-                2019-05-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-29T08:44:04+08:00">
+                2019-05-29
               </time>
             
 
@@ -282,8 +283,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -319,17 +320,8 @@
       
 
       
-        <h3 id="1-定义测试类"><a href="#1-定义测试类" class="headerlink" title="1.定义测试类"></a>1.定义测试类</h3><pre><code>测试类名写法：被测试的类名Test
-包名写法：xxx.xxx.xxx.test
-</code></pre><h3 id="2-定义可独立运行的测试方法"><a href="#2-定义可独立运行的测试方法" class="headerlink" title="2.定义可独立运行的测试方法"></a>2.定义可独立运行的测试方法</h3><pre><code>方法名：test被测试的方法名   testSum
-返回值：推荐为void
-参数列表： 推荐为空参
-</code></pre><h3 id="3-方法加-Test"><a href="#3-方法加-Test" class="headerlink" title="3.方法加@Test"></a>3.方法加@Test</h3><pre><code>@Test：不需要主方法（psvm）也能使类独立运行。
-注意：需要添加Junit依赖
-</code></pre><h3 id="4-判断"><a href="#4-判断" class="headerlink" title="4.判断"></a>4.判断</h3><pre><code>断言处理结果：Assert.Equals(期望值,测试结果的输出值)
-</code></pre><h3 id="5-补充"><a href="#5-补充" class="headerlink" title="5.补充"></a>5.补充</h3><pre><code>@Before：修饰的方法会在测试方法之前被自动执行（一般用于init资源的申请）
-@After：修饰的方法会在测试方法之后自动被执行（用于资源的释放）
-</code></pre>
+        <h2 id="socket-client-ssh："><a href="#socket-client-ssh：" class="headerlink" title="socket_client_ssh："></a>socket_client_ssh：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">client = socket.socket()</span><br><span class="line">client.connect((<span class="string">'localhost'</span>,<span class="number">6969</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    cmd=input(<span class="string">"&gt;&gt;:"</span>).strip()</span><br><span class="line">    <span class="keyword">if</span> len(cmd) == <span class="number">0</span>:<span class="keyword">continue</span></span><br><span class="line">    client.send(cmd.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">    cmd_res_size = client.recv(<span class="number">1024</span>)   <span class="comment"># 接收服务器端的数据返回</span></span><br><span class="line">    print(<span class="string">"命令结果大小："</span>,cmd_res_size)</span><br><span class="line">    client.send(<span class="string">"准备好接收了，server可以发了"</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">    received_size = <span class="number">0</span></span><br><span class="line">    received_data = <span class="string">b''</span></span><br><span class="line">    <span class="keyword">while</span> received_size &lt; int(cmd_res_size.decode()):</span><br><span class="line">        data = client.recv(<span class="number">1024</span>)</span><br><span class="line">        received_size += len(data)</span><br><span class="line">        received_data += data</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"cmd res received done~~"</span>,received_size)</span><br><span class="line">        print(received_data.decode())</span><br><span class="line">client.close()</span><br></pre></td></tr></table></figure>
+<h2 id="socket-server-ssh："><a href="#socket-server-ssh：" class="headerlink" title="socket_server_ssh："></a>socket_server_ssh：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> os,time</span><br><span class="line"></span><br><span class="line">server = socket.socket()</span><br><span class="line">server.bind((<span class="string">'localhost'</span>,<span class="number">6969</span>))</span><br><span class="line">server.listen(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    conn,addr = server.accept() <span class="comment"># 等电话打进来,conn就是客户端连过来而服务器端为其生成的一个实例</span></span><br><span class="line">    print(<span class="string">"NEW COON:"</span>,conn)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        print(<span class="string">"等待新指令"</span>)</span><br><span class="line">        data = conn.recv(<span class="number">1024</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> data:</span><br><span class="line">            print(<span class="string">"客户端已断开"</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        print(<span class="string">"执行命令："</span>,data)</span><br><span class="line">        cmd_res=os.popen(data.decode()).read() <span class="comment"># 接收字符串，执行结果也是字符串</span></span><br><span class="line">        print(<span class="string">"Before send"</span>,len(cmd_res))</span><br><span class="line">        <span class="keyword">if</span> len(cmd_res) == <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">"cmd has no output..."</span>)</span><br><span class="line">        conn.send(str(len(cmd_res.encode())).encode(<span class="string">'utf-8'</span>))</span><br><span class="line">        <span class="comment">#time.sleep(0.5)  # 两条send写一起有可能会粘包，使用sleep处理粘包。</span></span><br><span class="line">        client_ack = conn.recv(<span class="number">1024</span>)   <span class="comment"># 等待客户端确认,粘包处理方法二（Linux）</span></span><br><span class="line">        print(<span class="string">"ack from client"</span>,client_ack.decode())</span><br><span class="line">        conn.send(cmd_res.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">        print(<span class="string">"Send Done~~"</span>)</span><br><span class="line"><span class="comment"># 关闭套接字</span></span><br><span class="line">server.close()</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -354,6 +346,12 @@
 	
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/代码库/" rel="tag"># 代码库</a>
+          
+        </div>
+      
 
       
       
@@ -363,8 +361,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/27/搭建博客总结/" rel="next" title="搭建博客总结">
-                <i class="fa fa-chevron-left"></i> 搭建博客总结
+              <a href="/2019/05/28/Maven/" rel="next" title="Maven">
+                <i class="fa fa-chevron-left"></i> Maven
               </a>
             
           </div>
@@ -372,10 +370,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/26/JDBC/" rel="prev" title="JDBC">
-                JDBC <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -509,7 +503,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-定义测试类"><span class="nav-number">1.</span> <span class="nav-text">1.定义测试类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-定义可独立运行的测试方法"><span class="nav-number">2.</span> <span class="nav-text">2.定义可独立运行的测试方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-方法加-Test"><span class="nav-number">3.</span> <span class="nav-text">3.方法加@Test</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-判断"><span class="nav-number">4.</span> <span class="nav-text">4.判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-补充"><span class="nav-number">5.</span> <span class="nav-text">5.补充</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#socket-client-ssh："><span class="nav-number">1.</span> <span class="nav-text">socket_client_ssh：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#socket-server-ssh："><span class="nav-number">2.</span> <span class="nav-text">socket_server_ssh：</span></a></li></ol></div>
             
 
           </div>
