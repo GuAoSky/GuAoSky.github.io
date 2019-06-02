@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="用于管理几十乃至上百个jar包 Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 将代码即时编译类似Eclipse和IDEA等功能 单元测试一次性执行 打包项目 相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可  Maven项目相关设置 本地仓库位置：${use">
+<meta name="description" content="1. 用于管理几十乃至上百个jar包Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 2. 将代码即时编译类似Eclipse和IDEA等功能3. 单元测试一次性执行4. 打包项目相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可 5. Maven项目相关设置本地仓库">
 <meta name="keywords" content="jar包管理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven">
 <meta property="og:url" content="http://yoursite.com/2019/05/28/Maven/index.html">
 <meta property="og:site_name" content="GuAosky&#39;s Blog(￣▽￣)／">
-<meta property="og:description" content="用于管理几十乃至上百个jar包 Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 将代码即时编译类似Eclipse和IDEA等功能 单元测试一次性执行 打包项目 相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可  Maven项目相关设置 本地仓库位置：${use">
+<meta property="og:description" content="1. 用于管理几十乃至上百个jar包Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 2. 将代码即时编译类似Eclipse和IDEA等功能3. 单元测试一次性执行4. 打包项目相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可 5. Maven项目相关设置本地仓库">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-28T13:45:54.168Z">
+<meta property="og:updated_time" content="2019-06-02T15:23:46.340Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven">
-<meta name="twitter:description" content="用于管理几十乃至上百个jar包 Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 将代码即时编译类似Eclipse和IDEA等功能 单元测试一次性执行 打包项目 相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可  Maven项目相关设置 本地仓库位置：${use">
+<meta name="twitter:description" content="1. 用于管理几十乃至上百个jar包Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 2. 将代码即时编译类似Eclipse和IDEA等功能3. 单元测试一次性执行4. 打包项目相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可 5. Maven项目相关设置本地仓库">
 
 
 
@@ -320,26 +320,31 @@
       
 
       
-        <ol>
-<li>用于管理几十乃至上百个jar包<br> Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。<br> jar包的坐标保存于pom.xml文件中。</li>
-<li>将代码即时编译类似Eclipse和IDEA等功能</li>
-<li>单元测试一次性执行</li>
-<li><p>打包项目<br> 相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可</p>
-</li>
-<li><p>Maven项目相关设置<br> 本地仓库位置：${user.home}/.m2/repository<br> 可在注释下添加自己创建的位置：<localrepository>D:\java_maven\maven_repository</localrepository><br> 注意：文件路径不要有中文名</p>
-</li>
-<li><p>Maven命令<br> mvn clean：删除本地编译的所有信息：target文件（个人编译环境可能不同）<br> mvn compile：对src/main下的java文件进行编译<br> mvn test：不仅编译src/test下的java文件同时也编译src/main下的java文件<br> mvn package：打包项目生成war包并同时编译src/main和src/test下的java文件<br> 注意：打包的属性可在pom.xml下更改<br> mvn install：compile+test+package+将包保存到本地仓库里</p>
-</li>
-<li>本地jar包下载至本地仓库<br> 在windows的cmd命令下，参考下面安装命令安装jar包。<br> 注意：这个命令不能换行，中间用空格来分割的<pre><code>安装指定文件到本地仓库命令：mvn install:install-file
--DgroupId=&lt;groupId&gt;       : 设置项目代码的包名(一般用组织名)
--DartifactId=&lt;artifactId&gt; : 设置项目名或模块名 
--Dversion=1.0.0           : 版本号
--Dpackaging=jar           : 什么类型的文件(jar包)
--Dfile=&lt;myfile.jar&gt;       : 指定jar文件路径与文件名(同目录只需文件名)
-</code></pre> 安装mysql-connector-java.jar命令实例：<pre><code>mvn install:install-file -DgroupId=mysql -DartifactId=mysql-connector-java -Dversion=8.0.11 -Dpackaging=jar -Dfile=mysql-connector-java-8.0.11.jar
-</code></pre> 执行完命令后，可看到SUCCESS字样的提示，代表安装成功了，可以在本地仓库找到了。</li>
-</ol>
-
+        <h5 id="1-用于管理几十乃至上百个jar包"><a href="#1-用于管理几十乃至上百个jar包" class="headerlink" title="1. 用于管理几十乃至上百个jar包"></a>1. 用于管理几十乃至上百个jar包</h5><pre><code>Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。
+jar包的坐标保存于pom.xml文件中。
+</code></pre><h5 id="2-将代码即时编译类似Eclipse和IDEA等功能"><a href="#2-将代码即时编译类似Eclipse和IDEA等功能" class="headerlink" title="2. 将代码即时编译类似Eclipse和IDEA等功能"></a>2. 将代码即时编译类似Eclipse和IDEA等功能</h5><h5 id="3-单元测试一次性执行"><a href="#3-单元测试一次性执行" class="headerlink" title="3. 单元测试一次性执行"></a>3. 单元测试一次性执行</h5><h5 id="4-打包项目"><a href="#4-打包项目" class="headerlink" title="4. 打包项目"></a>4. 打包项目</h5><pre><code>相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可
+</code></pre><h5 id="5-Maven项目相关设置"><a href="#5-Maven项目相关设置" class="headerlink" title="5. Maven项目相关设置"></a>5. Maven项目相关设置</h5><pre><code>本地仓库位置：${user.home}/.m2/repository
+可在注释下添加自己创建的位置：&lt;localRepository&gt;D:\java_maven\maven_repository&lt;/localRepository&gt;
+注意：文件路径不要有中文名
+</code></pre><a id="more"></a>    
+<h5 id="6-Maven命令"><a href="#6-Maven命令" class="headerlink" title="6. Maven命令"></a>6. Maven命令</h5><pre><code>mvn clean：删除本地编译的所有信息：target文件（个人编译环境可能不同）
+mvn compile：对src/main下的java文件进行编译
+mvn test：不仅编译src/test下的java文件同时也编译src/main下的java文件
+mvn package：打包项目生成war包并同时编译src/main和src/test下的java文件
+注意：打包的属性可在pom.xml下更改
+mvn install：compile+test+package+将包保存到本地仓库里
+</code></pre><h5 id="7-本地jar包下载至本地仓库"><a href="#7-本地jar包下载至本地仓库" class="headerlink" title="7. 本地jar包下载至本地仓库"></a>7. 本地jar包下载至本地仓库</h5><pre><code>在windows的cmd命令下，参考下面安装命令安装jar包。
+注意：这个命令不能换行，中间用空格来分割的
+    安装指定文件到本地仓库命令：mvn install:install-file
+    -DgroupId=&lt;groupId&gt;       : 设置项目代码的包名(一般用组织名)
+    -DartifactId=&lt;artifactId&gt; : 设置项目名或模块名 
+    -Dversion=1.0.0           : 版本号
+    -Dpackaging=jar           : 什么类型的文件(jar包)
+    -Dfile=&lt;myfile.jar&gt;       : 指定jar文件路径与文件名(同目录只需文件名)
+安装mysql-connector-java.jar命令实例：
+    mvn install:install-file -DgroupId=mysql -DartifactId=mysql-connector-java -Dversion=8.0.11 -Dpackaging=jar -Dfile=mysql-connector-java-8.0.11.jar
+执行完命令后，可看到SUCCESS字样的提示，代表安装成功了，可以在本地仓库找到了。
+</code></pre>
       
     </div>
     
@@ -443,8 +448,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -461,7 +475,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -472,7 +486,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -483,7 +497,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -506,6 +520,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-用于管理几十乃至上百个jar包"><span class="nav-number">1.</span> <span class="nav-text">1. 用于管理几十乃至上百个jar包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-将代码即时编译类似Eclipse和IDEA等功能"><span class="nav-number">2.</span> <span class="nav-text">2. 将代码即时编译类似Eclipse和IDEA等功能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-单元测试一次性执行"><span class="nav-number">3.</span> <span class="nav-text">3. 单元测试一次性执行</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-打包项目"><span class="nav-number">4.</span> <span class="nav-text">4. 打包项目</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-Maven项目相关设置"><span class="nav-number">5.</span> <span class="nav-text">5. Maven项目相关设置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-Maven命令"><span class="nav-number">6.</span> <span class="nav-text">6. Maven命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-本地jar包下载至本地仓库"><span class="nav-number">7.</span> <span class="nav-text">7. 本地jar包下载至本地仓库</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

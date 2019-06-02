@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="1234567891011121314151617181920212223242526272829package com.dns.suanfa;public class ErFenFa &amp;#123;    public static int numSearch(int[] arry, int num)&amp;#123;        int highIndex = arry.length-1;">
+<meta name="description" content="使用循环二分法查找有序数组的数字位置。12345678910111213141516171819202122232425262728package com.dns.suanfa;public class ErFenFa &amp;#123;    public static int numSearch(int[] arry, int num)&amp;#123;        int highIndex = ar">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="循环二分法">
 <meta property="og:url" content="http://yoursite.com/2019/06/02/循环二分法/index.html">
 <meta property="og:site_name" content="GuAosky&#39;s Blog(￣▽￣)／">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829package com.dns.suanfa;public class ErFenFa &amp;#123;    public static int numSearch(int[] arry, int num)&amp;#123;        int highIndex = arry.length-1;">
+<meta property="og:description" content="使用循环二分法查找有序数组的数字位置。12345678910111213141516171819202122232425262728package com.dns.suanfa;public class ErFenFa &amp;#123;    public static int numSearch(int[] arry, int num)&amp;#123;        int highIndex = ar">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-02T14:15:07.402Z">
+<meta property="og:updated_time" content="2019-06-02T15:20:21.232Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="循环二分法">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829package com.dns.suanfa;public class ErFenFa &amp;#123;    public static int numSearch(int[] arry, int num)&amp;#123;        int highIndex = arry.length-1;">
+<meta name="twitter:description" content="使用循环二分法查找有序数组的数字位置。12345678910111213141516171819202122232425262728package com.dns.suanfa;public class ErFenFa &amp;#123;    public static int numSearch(int[] arry, int num)&amp;#123;        int highIndex = ar">
 
 
 
@@ -320,7 +320,7 @@
       
 
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dns.suanfa;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ErFenFa</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">numSearch</span><span class="params">(<span class="keyword">int</span>[] arry, <span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> highIndex = arry.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> lowIndex = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (lowIndex &lt;= highIndex)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (highIndex + lowIndex)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (num == arry[mid])&#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (num &lt; arry[mid])&#123;</span><br><span class="line">                highIndex = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                lowIndex = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">		<span class="comment">// 数字不存在则返回-1</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 测试入口</span></span><br><span class="line">	<span class="comment">// 注意数组应为排序后的数组</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] ary = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">15</span>,<span class="number">22</span>,<span class="number">56</span>,<span class="number">64</span>,<span class="number">88</span>&#125;;</span><br><span class="line">        System.out.println(<span class="string">"循环查找后该数位于数组第："</span> + (numSearch(ary,<span class="number">15</span>)+<span class="number">1</span>)+<span class="string">"位"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h5 id="使用循环二分法查找有序数组的数字位置。"><a href="#使用循环二分法查找有序数组的数字位置。" class="headerlink" title="使用循环二分法查找有序数组的数字位置。"></a>使用循环二分法查找有序数组的数字位置。</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dns.suanfa;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ErFenFa</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">numSearch</span><span class="params">(<span class="keyword">int</span>[] arry, <span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> highIndex = arry.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> lowIndex = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (lowIndex &lt;= highIndex)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (highIndex + lowIndex)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (num == arry[mid])&#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (num &lt; arry[mid])&#123;</span><br><span class="line">                highIndex = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                lowIndex = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">		<span class="comment">// 数字不存在则返回-1</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 测试入口</span></span><br><span class="line">	<span class="comment">// 注意数组应为排序后的数组</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] ary = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">15</span>,<span class="number">22</span>,<span class="number">56</span>,<span class="number">64</span>,<span class="number">88</span>&#125;;</span><br><span class="line">        System.out.println(<span class="string">"循环查找后该数位于数组第："</span> + (numSearch(ary,<span class="number">15</span>)+<span class="number">1</span>)+<span class="string">"位"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -370,6 +370,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/02/Blog遇坑合集/" rel="prev" title="Blog遇坑合集">
+                Blog遇坑合集 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -421,8 +425,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -439,7 +452,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -450,7 +463,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -461,7 +474,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -484,6 +497,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用循环二分法查找有序数组的数字位置。"><span class="nav-number">1.</span> <span class="nav-text">使用循环二分法查找有序数组的数字位置。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

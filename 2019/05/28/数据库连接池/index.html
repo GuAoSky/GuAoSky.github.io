@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="GuAosky&#39;s Blog(￣▽￣)／">
 <meta property="og:description" content="概念：用于存放数据库连接的容器（集合）。 意义：普通jdbc执行close就会释放该资源，下次再调用时就得重新创建对象，这样频繁创建对象，造成浪费资源的同时 也降低执行效率。 节约资源，用户访问高效 实现步骤：标准接口：DataSource（java.sql）     方法：         创建数据库连接池对象：ComboPooledDataSource()         获取连接对象：get">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-28T12:22:50.381Z">
+<meta property="og:updated_time" content="2019-06-02T15:24:42.374Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库连接池">
 <meta name="twitter:description" content="概念：用于存放数据库连接的容器（集合）。 意义：普通jdbc执行close就会释放该资源，下次再调用时就得重新创建对象，这样频繁创建对象，造成浪费资源的同时 也降低执行效率。 节约资源，用户访问高效 实现步骤：标准接口：DataSource（java.sql）     方法：         创建数据库连接池对象：ComboPooledDataSource()         获取连接对象：get">
@@ -331,7 +331,8 @@
         归还连接：Connection.close()
         注意：如果Connection对象是由连接池中获取的，那么执行close()方法则不会释放该资源，而是将该资源返回连接池中。
         交于数据库厂商实现
-</code></pre><h3 id="两种连接池技术（c3p0，Druid）"><a href="#两种连接池技术（c3p0，Druid）" class="headerlink" title="两种连接池技术（c3p0，Druid）"></a>两种连接池技术（c3p0，Druid）</h3><h4 id="c3p0："><a href="#c3p0：" class="headerlink" title="c3p0："></a>c3p0：</h4><pre><code>导入三个jar包：
+</code></pre><a id="more"></a>            
+<h3 id="两种连接池技术（c3p0，Druid）"><a href="#两种连接池技术（c3p0，Druid）" class="headerlink" title="两种连接池技术（c3p0，Druid）"></a>两种连接池技术（c3p0，Druid）</h3><h4 id="c3p0："><a href="#c3p0：" class="headerlink" title="c3p0："></a>c3p0：</h4><pre><code>导入三个jar包：
     c3p0-0.9.5.2.jar，和mchange-commons-java-0.2.12.jar以及数据库驱动包mysql-connector-java-8.0.11.jar
 导入配置文件：
     配置文件名：
@@ -489,7 +490,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -500,7 +501,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -511,7 +512,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
