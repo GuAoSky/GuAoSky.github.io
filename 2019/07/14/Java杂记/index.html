@@ -84,7 +84,7 @@
 <meta property="og:site_name" content="GuAosky&#39;s Blog(￣▽￣)／">
 <meta property="og:description" content="1.Java中equal与==的区别1.1 ==：     当变量为基本数据类型时，比较的是两边值的大小。     当变量为引用类型时，比较的是其指向的地址值。 1.2 equal():     当没有对equal()重写时，比较的是指向的地址值。     当重写了equal()时，比较的是其指向的内容。例如(Double,Date,Integer,String)等包装类     equal()不">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-14T13:34:14.406Z">
+<meta property="og:updated_time" content="2019-07-23T15:51:37.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java杂记">
 <meta name="twitter:description" content="1.Java中equal与==的区别1.1 ==：     当变量为基本数据类型时，比较的是两边值的大小。     当变量为引用类型时，比较的是其指向的地址值。 1.2 equal():     当没有对equal()重写时，比较的是指向的地址值。     当重写了equal()时，比较的是其指向的内容。例如(Double,Date,Integer,String)等包装类     equal()不">
@@ -326,6 +326,7 @@
     当没有对equal()重写时，比较的是指向的地址值。
     当重写了equal()时，比较的是其指向的内容。例如(Double,Date,Integer,String)等包装类
     equal()不能用于基本的数据类型变量。
+</code></pre><h2 id="2-MyBatis中配置接口配置文件别名"><a href="#2-MyBatis中配置接口配置文件别名" class="headerlink" title="2.MyBatis中配置接口配置文件别名"></a>2.MyBatis中配置接口配置文件别名</h2><pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2.1</span> domain包下批量配置</span><br><span class="line">&lt;!--配置domain下所有接口的别名（默认为类名）--&gt;</span><br><span class="line">&lt;typeAliases&gt;</span><br><span class="line">      &lt;<span class="keyword">package</span> name=<span class="string">"com.guaosky.domain"</span>/&gt;</span><br><span class="line">&lt;/typeAliases&gt;</span><br><span class="line"></span><br><span class="line"><span class="number">2.2</span> domain包下具体一个类</span><br><span class="line">&lt;!--配置domain下所有接口的别名（默认为类名）--&gt;</span><br><span class="line">&lt;typeAliases&gt;</span><br><span class="line">      &lt;typeAlias type=<span class="string">"com.guaosky.domain.IUserDao"</span> alias=<span class="string">"userDao"</span>/&gt;</span><br><span class="line">&lt;/typeAliases&gt;</span><br></pre></td></tr></table></figure>
 </code></pre>
       
     </div>
@@ -502,7 +503,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Java中equal与-的区别"><span class="nav-number">1.</span> <span class="nav-text">1.Java中equal与==的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Java中equal与-的区别"><span class="nav-number">1.</span> <span class="nav-text">1.Java中equal与==的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-MyBatis中配置接口配置文件别名"><span class="nav-number">2.</span> <span class="nav-text">2.MyBatis中配置接口配置文件别名</span></a></li></ol></div>
             
 
           </div>
