@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="GuAosky&#39;s Blog(￣▽￣)／">
 <meta property="og:description" content="c3p0-config.xml:1234567891011121314151617181920212223&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&amp;lt;c3p0-config&amp;gt;  &amp;lt;!--使用默认的配置读取连接池对象--&amp;gt;  &amp;lt;default-config&amp;gt;	&amp;lt;!--连接参数，注意MySQL版本8v及以上+cj-">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-28T13:26:25.858Z">
+<meta property="og:updated_time" content="2019-07-30T03:57:23.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c3p0配置步骤与实现">
 <meta name="twitter:description" content="c3p0-config.xml:1234567891011121314151617181920212223&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&amp;lt;c3p0-config&amp;gt;  &amp;lt;!--使用默认的配置读取连接池对象--&amp;gt;  &amp;lt;default-config&amp;gt;	&amp;lt;!--连接参数，注意MySQL版本8v及以上+cj-">
@@ -236,7 +236,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SuperRobot">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/tj1.png">
+      <meta itemprop="image" content="/images/tj3.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -321,6 +321,7 @@
 
       
         <h2 id="c3p0-config-xml"><a href="#c3p0-config-xml" class="headerlink" title="c3p0-config.xml:"></a>c3p0-config.xml:</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</span><br><span class="line">&lt;c3p0-config&gt;</span><br><span class="line">  &lt;!--使用默认的配置读取连接池对象--&gt;</span><br><span class="line">  &lt;<span class="keyword">default</span>-config&gt;</span><br><span class="line">	&lt;!--连接参数，注意MySQL版本<span class="number">8</span>v及以上+cj--&gt;</span><br><span class="line">	&lt;property name="driverClass"&gt;com.mysql.cj.jdbc.Driver&lt;/property&gt;</span><br><span class="line">	&lt;property name=<span class="string">"jdbcUrl"</span>&gt;jdbc:mysql:<span class="comment">///stu&lt;/property&gt;</span></span><br><span class="line">	&lt;property name="user"&gt;DBname&lt;/property&gt;</span><br><span class="line">	&lt;property name="password"&gt;DBpwd&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!--连接池参数--&gt;</span><br><span class="line">	&lt;!--初始化申请的连接数量--&gt;</span><br><span class="line">	&lt;property name="initialPoolSize"&gt;5&lt;/property&gt;</span><br><span class="line">	&lt;!--最大连接数--&gt;</span><br><span class="line">	&lt;property name="maxPoolSize"&gt;10&lt;/property&gt;</span><br><span class="line">	&lt;!--超时时间--&gt;</span><br><span class="line">	&lt;property name="checkoutTimeout"&gt;3000&lt;/property&gt;</span><br><span class="line">  &lt;/default-config&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;!--用于用户自定配置--&gt;</span><br><span class="line">  &lt;named-config name=<span class="string">"otherc3p0"</span>&gt; </span><br><span class="line">  &lt;/named-config&gt;</span><br><span class="line">&lt;/c3p0-config&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>    
 <h2 id="测试代码："><a href="#测试代码：" class="headerlink" title="测试代码："></a>测试代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.guaosky.dataSource.c3p0;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.mchange.v2.c3p0.ComboPooledDataSource;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.sql.DataSource;</span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">C3p0Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">		<span class="comment">// 创建数据库连接池对象</span></span><br><span class="line">		<span class="comment">// 注意：ComboPooledDataSource()方法中没有指定参数，表示使用默认c3p0.xml配置</span></span><br><span class="line">		DataSource ds = <span class="keyword">new</span> ComboPooledDataSource();</span><br><span class="line">		<span class="comment">// 获取连接对象</span></span><br><span class="line">		Connection conn = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)&#123;</span><br><span class="line">			conn = ds.getConnection();</span><br><span class="line">			System.out.println(conn);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="c3p0-jar包下载"><a href="#c3p0-jar包下载" class="headerlink" title="c3p0.jar包下载"></a>c3p0.jar包下载</h2><p><a href="https://pan.baidu.com/s/1YiRLVHG8jIrlWft-bRcWFQ" target="_blank" rel="noopener">百度网盘</a><br>提取码：3u11</p>
 
@@ -441,7 +442,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/tj1.png" alt="SuperRobot">
+              <img class="site-author-image" itemprop="image" src="/images/tj3.jpg" alt="SuperRobot">
             
               <p class="site-author-name" itemprop="name">SuperRobot</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -476,7 +477,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

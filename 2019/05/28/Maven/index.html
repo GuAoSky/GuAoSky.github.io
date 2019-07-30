@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="1. 用于管理几十乃至上百个jar包Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 2. 将代码即时编译类似Eclipse和IDEA等功能3. 单元测试一次性执行4. 打包项目相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可 5. Maven项目相关设置本地仓库">
+<meta name="description" content="1. 用于管理几十乃至上百个jar包Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 2. 将代码即时编译类似Eclipse和IDEA等功能3. 单元测试一次性执行4. 打包项目相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可">
 <meta name="keywords" content="jar包管理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven">
 <meta property="og:url" content="http://yoursite.com/2019/05/28/Maven/index.html">
 <meta property="og:site_name" content="GuAosky&#39;s Blog(￣▽￣)／">
-<meta property="og:description" content="1. 用于管理几十乃至上百个jar包Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 2. 将代码即时编译类似Eclipse和IDEA等功能3. 单元测试一次性执行4. 打包项目相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可 5. Maven项目相关设置本地仓库">
+<meta property="og:description" content="1. 用于管理几十乃至上百个jar包Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 2. 将代码即时编译类似Eclipse和IDEA等功能3. 单元测试一次性执行4. 打包项目相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-02T15:23:46.340Z">
+<meta property="og:updated_time" content="2019-07-30T03:56:32.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven">
-<meta name="twitter:description" content="1. 用于管理几十乃至上百个jar包Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 2. 将代码即时编译类似Eclipse和IDEA等功能3. 单元测试一次性执行4. 打包项目相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可 5. Maven项目相关设置本地仓库">
+<meta name="twitter:description" content="1. 用于管理几十乃至上百个jar包Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。 jar包的坐标保存于pom.xml文件中。 2. 将代码即时编译类似Eclipse和IDEA等功能3. 单元测试一次性执行4. 打包项目相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可">
 
 
 
@@ -236,7 +236,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SuperRobot">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/tj1.png">
+      <meta itemprop="image" content="/images/tj3.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -323,11 +323,11 @@
         <h5 id="1-用于管理几十乃至上百个jar包"><a href="#1-用于管理几十乃至上百个jar包" class="headerlink" title="1. 用于管理几十乃至上百个jar包"></a>1. 用于管理几十乃至上百个jar包</h5><pre><code>Maven将jar包统一管理在jar包仓库里实现代码重用，节省项目空间。
 jar包的坐标保存于pom.xml文件中。
 </code></pre><h5 id="2-将代码即时编译类似Eclipse和IDEA等功能"><a href="#2-将代码即时编译类似Eclipse和IDEA等功能" class="headerlink" title="2. 将代码即时编译类似Eclipse和IDEA等功能"></a>2. 将代码即时编译类似Eclipse和IDEA等功能</h5><h5 id="3-单元测试一次性执行"><a href="#3-单元测试一次性执行" class="headerlink" title="3. 单元测试一次性执行"></a>3. 单元测试一次性执行</h5><h5 id="4-打包项目"><a href="#4-打包项目" class="headerlink" title="4. 打包项目"></a>4. 打包项目</h5><pre><code>相较于传统tomcat打包项目，Maven集成tomcat插件只需cd项目文件下运行mvn tomcat:run即可
-</code></pre><h5 id="5-Maven项目相关设置"><a href="#5-Maven项目相关设置" class="headerlink" title="5. Maven项目相关设置"></a>5. Maven项目相关设置</h5><pre><code>本地仓库位置：${user.home}/.m2/repository
+</code></pre><a id="more"></a>    
+<h5 id="5-Maven项目相关设置"><a href="#5-Maven项目相关设置" class="headerlink" title="5. Maven项目相关设置"></a>5. Maven项目相关设置</h5><pre><code>本地仓库位置：${user.home}/.m2/repository
 可在注释下添加自己创建的位置：&lt;localRepository&gt;D:\java_maven\maven_repository&lt;/localRepository&gt;
 注意：文件路径不要有中文名
-</code></pre><a id="more"></a>    
-<h5 id="6-Maven命令"><a href="#6-Maven命令" class="headerlink" title="6. Maven命令"></a>6. Maven命令</h5><pre><code>mvn clean：删除本地编译的所有信息：target文件（个人编译环境可能不同）
+</code></pre><h5 id="6-Maven命令"><a href="#6-Maven命令" class="headerlink" title="6. Maven命令"></a>6. Maven命令</h5><pre><code>mvn clean：删除本地编译的所有信息：target文件（个人编译环境可能不同）
 mvn compile：对src/main下的java文件进行编译
 mvn test：不仅编译src/test下的java文件同时也编译src/main下的java文件
 mvn package：打包项目生成war包并同时编译src/main和src/test下的java文件
@@ -462,7 +462,7 @@ mvn install：compile+test+package+将包保存到本地仓库里
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/tj1.png" alt="SuperRobot">
+              <img class="site-author-image" itemprop="image" src="/images/tj3.jpg" alt="SuperRobot">
             
               <p class="site-author-name" itemprop="name">SuperRobot</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -497,7 +497,7 @@ mvn install：compile+test+package+将包保存到本地仓库里
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
