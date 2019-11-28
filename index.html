@@ -227,7 +227,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/28/记一次SpringBoot连接SQLServer/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/28/SpringBoot问题汇总/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SuperRobot">
@@ -246,7 +246,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/28/记一次SpringBoot连接SQLServer/" itemprop="url">记一次SpringBoot连接SQLServer</a></h1>
+                <a class="post-title-link" href="/2019/11/28/SpringBoot问题汇总/" itemprop="url">SpringBoot问题汇总</a></h1>
         
 
         <div class="post-meta">
@@ -320,7 +320,8 @@
       
         
           
-            <h2 id="1-pom文件所需要的依赖"><a href="#1-pom文件所需要的依赖" class="headerlink" title="1.pom文件所需要的依赖"></a>1.pom文件所需要的依赖</h2><pre><code>    &lt;!--SQLServer--&gt;
+            <h2 id="记一次SpringBoot连接SQLServer"><a href="#记一次SpringBoot连接SQLServer" class="headerlink" title="记一次SpringBoot连接SQLServer"></a>记一次SpringBoot连接SQLServer</h2><pre><code>1.pom文件所需要的依赖
+    &lt;!--SQLServer--&gt;
     &lt;dependency&gt;
         &lt;groupId&gt;com.microsoft.sqlserver&lt;/groupId&gt;
         &lt;artifactId&gt;mssql-jdbc&lt;/artifactId&gt;
@@ -339,6 +340,22 @@
     spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
 3.测试
     <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CioTeaApplicationTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	DataSource dataSource;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">		System.out.println(dataSource.getConnection());</span><br><span class="line">		System.out.println(dataSource.getClass());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="通用Mapper相关配置"><a href="#通用Mapper相关配置" class="headerlink" title="通用Mapper相关配置"></a>通用Mapper相关配置</h2><pre><code>1.pom文件所需要的依赖
+    &lt;dependency&gt;
+        &lt;groupId&gt;tk.mybatis&lt;/groupId&gt;
+        &lt;artifactId&gt;mapper-spring-boot-starter&lt;/artifactId&gt;
+        &lt;version&gt;2.0.2&lt;/version&gt;
+    &lt;/dependency&gt;
+2.配置实体类映射数据库对象
+    @Table（name=“表名”）
+    @Id：主键
+    @Column（name=“列名”）。。
+3.创建mapper接口
+    mapper接口继承Mapper并绑定泛型
+    public interface QrcodeMapper extends Mapper&lt;QrcodeEntity&gt;
+4.Springboot启动类配置mapper扫描路径
+    @MapperScan(&quot;com.cioclass.mapper&quot;)
+    注意该@MapperScan为tk.mybatis.spring.annotation.MapperScan包下
 </code></pre>
           
         
