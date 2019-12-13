@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="GuAosky&#39;s Blog(￣▽￣)／">
 <meta property="og:description" content="记一次SpringBoot连接SQLServer1.pom文件所需要的依赖     &amp;lt;!--SQLServer--&amp;gt;     &amp;lt;dependency&amp;gt;         &amp;lt;groupId&amp;gt;com.microsoft.sqlserver&amp;lt;/groupId&amp;gt;         &amp;lt;artifactId&amp;gt;mssql-jdbc&amp;lt;/artifact">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-28T16:33:50.650Z">
+<meta property="og:updated_time" content="2019-12-13T09:14:51.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot问题汇总">
 <meta name="twitter:description" content="记一次SpringBoot连接SQLServer1.pom文件所需要的依赖     &amp;lt;!--SQLServer--&amp;gt;     &amp;lt;dependency&amp;gt;         &amp;lt;groupId&amp;gt;com.microsoft.sqlserver&amp;lt;/groupId&amp;gt;         &amp;lt;artifactId&amp;gt;mssql-jdbc&amp;lt;/artifact">
@@ -333,30 +333,16 @@
         &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;
         &lt;version&gt;2.2.1.RELEASE&lt;/version&gt;
     &lt;/dependency&gt;
-2.application.properties
+</code></pre><a id="more"></a>    
+<pre><code>2.application.properties
     spring.datasource.username=
     spring.datasource.password=
     spring.datasource.url=jdbc:sqlserver://127.0.0.1:1433;DatabaseName=
     spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
 3.测试
-    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CioTeaApplicationTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	DataSource dataSource;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">		System.out.println(dataSource.getConnection());</span><br><span class="line">		System.out.println(dataSource.getClass());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h2 id="通用Mapper相关配置"><a href="#通用Mapper相关配置" class="headerlink" title="通用Mapper相关配置"></a>通用Mapper相关配置</h2><pre><code>1.pom文件所需要的依赖
-    &lt;dependency&gt;
-        &lt;groupId&gt;tk.mybatis&lt;/groupId&gt;
-        &lt;artifactId&gt;mapper-spring-boot-starter&lt;/artifactId&gt;
-        &lt;version&gt;2.0.2&lt;/version&gt;
-    &lt;/dependency&gt;
-2.配置实体类映射数据库对象
-    @Table（name=“表名”）
-    @Id：主键
-    @Column（name=“列名”）。。
-3.创建mapper接口
-    mapper接口继承Mapper并绑定泛型
-    public interface QrcodeMapper extends Mapper&lt;QrcodeEntity&gt;
-4.Springboot启动类配置mapper扫描路径
-    @MapperScan(&quot;com.cioclass.mapper&quot;)
-    注意该@MapperScan为tk.mybatis.spring.annotation.MapperScan包下
-</code></pre>
+    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CioTeaApplicationTests</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	DataSource dataSource;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">		System.out.println(dataSource.getConnection());</span><br><span class="line">		System.out.println(dataSource.getClass());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="通用Mapper相关配置"><a href="#通用Mapper相关配置" class="headerlink" title="通用Mapper相关配置"></a>通用Mapper相关配置</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.pom文件所需要的依赖</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;tk.mybatis&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;mapper-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.0.2&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"><span class="number">2</span>.配置实体类映射数据库对象</span><br><span class="line">	<span class="meta">@Table</span>（name=“表名”）</span><br><span class="line">	<span class="meta">@Id</span>：主键</span><br><span class="line">	<span class="meta">@Column</span>（name=“列名”）。。</span><br><span class="line"><span class="number">3</span>.创建mapper接口</span><br><span class="line">	mapper接口继承Mapper并绑定泛型</span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">QrcodeMapper</span> <span class="keyword">extends</span> <span class="title">Mapper</span>&lt;<span class="title">QrcodeEntity</span>&gt;</span></span><br><span class="line"><span class="class">4.<span class="title">Springboot</span>启动类配置<span class="title">mapper</span>扫描路径</span></span><br><span class="line">	@MapperScan("com.cioclass.mapper")</span><br><span class="line">	注意该<span class="meta">@MapperScan</span>为tk.mybatis.spring.annotation.MapperScan包下</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -405,6 +391,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/13/echarts动态表实现/" rel="prev" title="echarts动态表实现">
+                echarts动态表实现 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -483,7 +473,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -494,7 +484,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -505,7 +495,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
